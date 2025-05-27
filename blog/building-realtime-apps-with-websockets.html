@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Real-time Apps with WebSockets | Shahorior's Blog</title>
+    <meta name="description" content="Learn how to implement real-time functionality in your web applications using WebSockets. A comprehensive guide covering setup, patterns, and optimization.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/effects.css">
+    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+</head>
+<body class="loading">
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <svg class="logo-svg" width="100" height="100" viewBox="0 0 100 100">
+                <path d="M30,50 L70,20 L70,80 L30,50 Z" class="logo-path"></path>
+            </svg>
+            <div class="loading-text">
+                <span>L</span>
+                <span>O</span>
+                <span>A</span>
+                <span>D</span>
+                <span>I</span>
+                <span>N</span>
+                <span>G</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Transition -->
+    <div class="page-transition"></div>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch">
+        <label for="theme-switch" class="switch-label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span class="ball"></span>
+        </label>
+    </div>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="../index.html">Shahorior</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../index.html#home">Home</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../index.html#skills">Skills</a></li>
+                    <li><a href="../resume.html">Resume</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="blog-post-content">
+        <div class="container">
+            <div class="post-header" data-aos="fade-up">
+                <h1>Building Real-time Apps with WebSockets</h1>
+                <div class="post-meta">
+                    <span class="post-date"><i class="far fa-calendar"></i> June 15, 2023</span>
+                    <span class="post-time"><i class="far fa-clock"></i> 8 min read</span>
+                    <span class="post-author"><i class="far fa-user"></i> Shahorior</span>
+                </div>
+                <div class="post-tags">
+                    <a href="../blog.html?tag=javascript" class="post-tag">JavaScript</a>
+                    <a href="../blog.html?tag=websockets" class="post-tag">WebSockets</a>
+                    <a href="../blog.html?tag=react" class="post-tag">React</a>
+                </div>
+            </div>
+
+            <div class="post-featured-image" data-aos="fade-up" data-aos-delay="100">
+                <img src="../img/blog-websockets.jpg" alt="Real-time Apps with WebSockets">
+            </div>
+
+            <div class="post-content" data-aos="fade-up" data-aos-delay="200">
+                <p>
+                    Real-time communication has become essential for modern web applications. From chat applications to collaborative document editing, live notifications to online gaming - the demand for instant data updates has never been higher. WebSockets provide a powerful solution for implementing these real-time features with minimal overhead.
+                </p>
+                
+                <h2>What are WebSockets?</h2>
+                <p>
+                    WebSockets are a protocol that enables two-way communication between a client (typically a web browser) and a server over a single, long-lived connection. Unlike traditional HTTP requests where the client initiates communication, WebSockets allow both the client and server to send messages to each other at any time.
+                </p>
+                <p>
+                    This bidirectional nature makes WebSockets perfect for applications requiring real-time updates, as data can be pushed from the server to the client immediately, without the client having to poll the server for changes.
+                </p>
+                
+                <h2>Getting Started with WebSockets</h2>
+                <p>
+                    Let's implement a simple WebSocket connection in JavaScript. The WebSocket API is built into modern browsers, making it straightforward to use:
+                </p>
+                
+                <div class="code-block">
+                    <pre><code class="javascript">
+// Create a new WebSocket connection
+const socket = new WebSocket('wss://example.com/socketserver');
+
+// Connection opened
+socket.addEventListener('open', (event) => {
+    console.log('Connected to WebSocket server');
+    
+    // Send a message to the server
+    socket.send('Hello Server!');
+});
+
+// Listen for messages from the server
+socket.addEventListener('message', (event) => {
+    console.log('Message from server:', event.data);
+});
+
+// Listen for errors
+socket.addEventListener('error', (event) => {
+    console.error('WebSocket error:', event);
+});
+
+// Connection closed
+socket.addEventListener('close', (event) => {
+    console.log('Disconnected from WebSocket server');
+});
+                    </code></pre>
+                </div>
+
+                <h2>Building a Real-time Chat Application</h2>
+                <p>
+                    One of the most common use cases for WebSockets is a real-time chat application. Let's create a simple chat interface that uses WebSockets:
+                </p>
+
+                <div class="code-block">
+                    <pre><code class="javascript">
+// Front-end code (HTML)
+`
+<div id="chat-container">
+    <div id="message-list"></div>
+    <form id="message-form">
+        <input type="text" id="message-input" placeholder="Type your message...">
+        <button type="submit">Send</button>
+    </form>
+</div>
+`
+
+// JavaScript
+const messageList = document.getElementById('message-list');
+const messageForm = document.getElementById('message-form');
+const messageInput = document.getElementById('message-input');
+
+// Connect to WebSocket server
+const socket = new WebSocket('wss://chat.example.com/socket');
+
+// Send messages
+messageForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const message = messageInput.value.trim();
+    if (message) {
+        // Send to server
+        socket.send(JSON.stringify({
+            type: 'message',
+            content: message,
+            sender: 'User',
+            timestamp: new Date().toISOString()
+        }));
+        
+        messageInput.value = '';
+    }
+});
+
+// Receive messages
+socket.addEventListener('message', (event) => {
+    const data = JSON.parse(event.data);
+    
+    if (data.type === 'message') {
+        // Create message element
+        const messageEl = document.createElement('div');
+        messageEl.className = `message ${data.sender === 'User' ? 'outgoing' : 'incoming'}`;
+        
+        messageEl.innerHTML = `
+            <div class="message-content">${data.content}</div>
+            <div class="message-info">
+                <span class="message-sender">${data.sender}</span>
+                <span class="message-time">${new Date(data.timestamp).toLocaleTimeString()}</span>
+            </div>
+        `;
+        
+        // Add to message list
+        messageList.appendChild(messageEl);
+        
+        // Scroll to bottom
+        messageList.scrollTop = messageList.scrollHeight;
+    }
+});
+                    </code></pre>
+                </div>
+
+                <h2>WebSocket Integration with React</h2>
+                <p>
+                    For React applications, you can create a custom hook to manage WebSocket connections:
+                </p>
+
+                <div class="code-block">
+                    <pre><code class="javascript">
+import { useState, useEffect, useCallback } from 'react';
+
+const useWebSocket = (url) => {
+    const [socket, setSocket] = useState(null);
+    const [isConnected, setIsConnected] = useState(false);
+    const [messages, setMessages] = useState([]);
+    
+    // Initialize WebSocket connection
+    useEffect(() => {
+        const wsConnection = new WebSocket(url);
+        
+        wsConnection.onopen = () => {
+            setIsConnected(true);
+        };
+        
+        wsConnection.onclose = () => {
+            setIsConnected(false);
+        };
+        
+        wsConnection.onmessage = (event) => {
+            const message = JSON.parse(event.data);
+            setMessages((prevMessages) => [...prevMessages, message]);
+        };
+        
+        setSocket(wsConnection);
+        
+        // Clean up on unmount
+        return () => {
+            wsConnection.close();
+        };
+    }, [url]);
+    
+    // Send message function
+    const sendMessage = useCallback((data) => {
+        if (socket && isConnected) {
+            socket.send(JSON.stringify(data));
+        }
+    }, [socket, isConnected]);
+    
+    return { isConnected, messages, sendMessage };
+};
+
+export default useWebSocket;
+                    </code></pre>
+                </div>
+                
+                <p>
+                    You can then use this hook in your components:
+                </p>
+                
+                <div class="code-block">
+                    <pre><code class="javascript">
+import React, { useState } from 'react';
+import useWebSocket from './useWebSocket';
+
+const ChatComponent = () => {
+    const [messageText, setMessageText] = useState('');
+    const { isConnected, messages, sendMessage } = useWebSocket('wss://chat.example.com/socket');
+    
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        
+        if (messageText.trim()) {
+            sendMessage({
+                type: 'message',
+                content: messageText,
+                sender: 'User',
+                timestamp: new Date().toISOString()
+            });
+            
+            setMessageText('');
+        }
+    };
+    
+    return (
+        <div className="chat-container">
+            <div className="connection-status">
+                {isConnected ? 'Connected' : 'Disconnected'}
+            </div>
+            
+            <div className="message-list">
+                {messages.map((msg, index) => (
+                    <div 
+                        key={index} 
+                        className={`message ${msg.sender === 'User' ? 'outgoing' : 'incoming'}`}
+                    >
+                        <div className="message-content">{msg.content}</div>
+                        <div className="message-info">
+                            <span className="message-sender">{msg.sender}</span>
+                            <span className="message-time">
+                                {new Date(msg.timestamp).toLocaleTimeString()}
+                            </span>
+                        </div>
+                    </div>
+                ))}
+            </div>
+            
+            <form className="message-form" onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    value={messageText}
+                    onChange={(e) => setMessageText(e.target.value)}
+                    placeholder="Type your message..."
+                    disabled={!isConnected}
+                />
+                <button type="submit" disabled={!isConnected}>Send</button>
+            </form>
+        </div>
+    );
+};
+
+export default ChatComponent;
+                    </code></pre>
+                </div>
+
+                <h2>Handling WebSocket Connection Issues</h2>
+                <p>
+                    WebSocket connections can sometimes fail or get disconnected. Implementing a reconnection strategy is important for a robust application:
+                </p>
+
+                <div class="code-block">
+                    <pre><code class="javascript">
+class WebSocketManager {
+    constructor(url, options = {}) {
+        this.url = url;
+        this.options = {
+            reconnectInterval: 2000,
+            maxReconnectAttempts: 5,
+            ...options
+        };
+        
+        this.reconnectAttempts = 0;
+        this.listeners = {
+            message: [],
+            open: [],
+            close: [],
+            error: []
+        };
+        
+        this.connect();
+    }
+    
+    connect() {
+        this.socket = new WebSocket(this.url);
+        
+        this.socket.onopen = (event) => {
+            this.reconnectAttempts = 0;
+            this.triggerEvent('open', event);
+        };
+        
+        this.socket.onclose = (event) => {
+            this.triggerEvent('close', event);
+            
+            if (!event.wasClean) {
+                this.reconnect();
+            }
+        };
+        
+        this.socket.onerror = (event) => {
+            this.triggerEvent('error', event);
+        };
+        
+        this.socket.onmessage = (event) => {
+            this.triggerEvent('message', event);
+        };
+    }
+    
+    reconnect() {
+        if (this.reconnectAttempts < this.options.maxReconnectAttempts) {
+            this.reconnectAttempts++;
+            
+            setTimeout(() => {
+                console.log(`Reconnecting (${this.reconnectAttempts}/${this.options.maxReconnectAttempts})...`);
+                this.connect();
+            }, this.options.reconnectInterval);
+        } else {
+            console.error('Max reconnection attempts reached');
+        }
+    }
+    
+    on(event, callback) {
+        if (this.listeners[event]) {
+            this.listeners[event].push(callback);
+        }
+        
+        return this;
+    }
+    
+    triggerEvent(event, data) {
+        if (this.listeners[event]) {
+            this.listeners[event].forEach(callback => callback(data));
+        }
+    }
+    
+    send(data) {
+        if (this.socket && this.socket.readyState === WebSocket.OPEN) {
+            this.socket.send(typeof data === 'string' ? data : JSON.stringify(data));
+            return true;
+        }
+        return false;
+    }
+    
+    close() {
+        if (this.socket) {
+            this.socket.close();
+        }
+    }
+}
+
+// Usage
+const wsManager = new WebSocketManager('wss://example.com/socket');
+
+wsManager.on('open', () => {
+    console.log('Connected!');
+});
+
+wsManager.on('message', (event) => {
+    console.log('Received:', event.data);
+});
+
+wsManager.on('close', () => {
+    console.log('Disconnected!');
+});
+
+wsManager.on('error', (error) => {
+    console.error('Error:', error);
+});
+                    </code></pre>
+                </div>
+
+                <h2>Scaling WebSocket Applications</h2>
+                <p>
+                    When your WebSocket application grows, handling many simultaneous connections becomes challenging. Here are a few strategies to scale your WebSocket server:
+                </p>
+                
+                <ul>
+                    <li><strong>Horizontal Scaling</strong>: Deploy multiple WebSocket servers behind a load balancer.</li>
+                    <li><strong>Message Brokers</strong>: Use Redis, RabbitMQ, or Kafka to distribute messages between your WebSocket servers.</li>
+                    <li><strong>Connection Persistence</strong>: Use sticky sessions to ensure clients reconnect to the same server.</li>
+                    <li><strong>Rate Limiting</strong>: Implement rate limiting to prevent any single client from overwhelming your server.</li>
+                </ul>
+                
+                <h2>Conclusion</h2>
+                <p>
+                    WebSockets enable powerful real-time functionality in web applications. By establishing a persistent connection between client and server, you can create responsive, interactive experiences that weren't possible with traditional HTTP requests.
+                </p>
+                <p>
+                    Whether you're building a chat application, a collaborative editor, live notifications, or a multiplayer game, WebSockets provide the foundation for smooth, real-time communication. By implementing proper connection management and scaling strategies, you can ensure your WebSocket application remains robust even as it grows.
+                </p>
+                <p>
+                    Happy coding, and may your connections always remain open!
+                </p>
+            </div>
+
+            <div class="post-footer" data-aos="fade-up">
+                <div class="post-navigation">
+                    <div class="post-nav-prev">
+                        <span>Previous Article</span>
+                        <a href="#">Introduction to Three.js Animations</a>
+                    </div>
+                    <div class="post-nav-next">
+                        <span>Next Article</span>
+                        <a href="#">Best Practices for RESTful API Design</a>
+                    </div>
+                </div>
+
+                <div class="post-author-bio" data-aos="fade-up">
+                    <img src="../img/author.jpg" alt="Shahorior">
+                    <div class="author-info">
+                        <h3>Shahorior</h3>
+                        <p>Full-stack developer with a passion for creating intuitive, dynamic user experiences. Specializing in JavaScript, React, and Node.js.</p>
+                        <div class="author-social">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-dev"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post-comments" data-aos="fade-up">
+                    <h3>Leave a Comment</h3>
+                    <div class="comment-form">
+                        <form>
+                            <div class="form-group">
+                                <input type="text" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea placeholder="Your Comment" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn primary-btn">Post Comment</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="related-posts">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Related Articles</h2>
+            <div class="blog-grid">
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-image">
+                        <img src="../img/blog-nodejs-microservices.jpg" alt="Node.js Microservices">
+                    </div>
+                    <div class="blog-info">
+                        <div class="blog-meta">
+                            <span class="date"><i class="far fa-calendar"></i> February 20, 2023</span>
+                            <span class="read-time"><i class="far fa-clock"></i> 9 min read</span>
+                        </div>
+                        <h2>Building Scalable Microservices with Node.js</h2>
+                        <p>
+                            Learn how to design, implement, and deploy a scalable microservices architecture using Node.js, Docker, and Kubernetes.
+                        </p>
+                        <div class="blog-tags">
+                            <span>Node.js</span>
+                            <span>Microservices</span>
+                        </div>
+                        <a href="#" class="read-more">
+                            Read Article <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-image">
+                        <img src="../img/blog-react-hooks.jpg" alt="React Hooks">
+                    </div>
+                    <div class="blog-info">
+                        <div class="blog-meta">
+                            <span class="date"><i class="far fa-calendar"></i> April 10, 2023</span>
+                            <span class="read-time"><i class="far fa-clock"></i> 5 min read</span>
+                        </div>
+                        <h2>Mastering React Hooks: Beyond the Basics</h2>
+                        <p>
+                            Take your React skills to the next level by exploring advanced patterns with React Hooks.
+                        </p>
+                        <div class="blog-tags">
+                            <span>React</span>
+                            <span>Hooks</span>
+                        </div>
+                        <a href="#" class="read-more">
+                            Read Article <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Shahorior. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/blog.js"></script>
+    <script>
+        // Initialize syntax highlighting
+        document.addEventListener('DOMContentLoaded', () => {
+            hljs.highlightAll();
+        });
+    </script>
+</body>
+</html> 

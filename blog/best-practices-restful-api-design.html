@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Practices for RESTful API Design | Shahorior's Blog</title>
+    <meta name="description" content="A comprehensive guide to designing clean, efficient, and developer-friendly RESTful APIs. Learn about naming conventions, status codes, versioning, and authentication.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/effects.css">
+    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+</head>
+<body class="loading">
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <svg class="logo-svg" width="100" height="100" viewBox="0 0 100 100">
+                <path d="M30,50 L70,20 L70,80 L30,50 Z" class="logo-path"></path>
+            </svg>
+            <div class="loading-text">
+                <span>L</span>
+                <span>O</span>
+                <span>A</span>
+                <span>D</span>
+                <span>I</span>
+                <span>N</span>
+                <span>G</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Transition -->
+    <div class="page-transition"></div>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch">
+        <label for="theme-switch" class="switch-label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span class="ball"></span>
+        </label>
+    </div>
+
+    <!-- Reading Progress Indicator -->
+    <div class="reading-progress-container">
+        <div class="reading-progress" id="reading-progress"></div>
+    </div>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="../index.html">Shahorior</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../index.html#home">Home</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../index.html#skills">Skills</a></li>
+                    <li><a href="../resume.html">Resume</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="blog-post-content">
+        <div class="container">
+            <div class="post-header" data-aos="fade-up">
+                <h1>Best Practices for RESTful API Design</h1>
+                <div class="post-meta">
+                    <span class="post-date"><i class="far fa-calendar"></i> May 22, 2023</span>
+                    <span class="post-time"><i class="far fa-clock"></i> 6 min read</span>
+                    <span class="post-author"><i class="far fa-user"></i> Shahorior</span>
+                </div>
+                <div class="post-tags">
+                    <a href="../blog.html?tag=api" class="post-tag">API</a>
+                    <a href="../blog.html?tag=rest" class="post-tag">REST</a>
+                    <a href="../blog.html?tag=node" class="post-tag">Node.js</a>
+                </div>
+                
+                <!-- Social Sharing -->
+                <div class="post-share">
+                    <span>Share:</span>
+                    <a href="#" target="_blank" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+<a href="htps://www.instagram.com/shahorior_/?igsh=bGg1NWY2d2IzODJu#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" id="copy-post-link" aria-label="Copy link"><i class="fas fa-link"></i></a>
+                </div>
+            </div>
+
+            <div class="post-featured-image" data-aos="fade-up" data-aos-delay="100">
+                <img src="../img/blog-restful-api.jpg" alt="RESTful API Design">
+            </div>
+
+            <div class="post-content" data-aos="fade-up" data-aos-delay="200">
+                <p>
+                    Designing a good API is more art than science. A well-designed API can significantly improve developer productivity, code quality, and user satisfaction. Whether you're building an API for internal use, partners, or public consumption, following these RESTful API design best practices will help ensure your API is intuitive, efficient, and maintainable.
+                </p>
+                
+                <h2>Use Nouns, Not Verbs in Endpoint Paths</h2>
+                <p>
+                    REST APIs use HTTP methods to indicate actions, so your endpoint URLs should focus on the resources (nouns) rather than the actions (verbs). This approach makes your API more intuitive and easier to understand.
+                </p>
+                
+                <div class="code-block">
+                    <pre><code class="http">
+/* Good */
+GET /articles             # Get all articles
+GET /articles/123         # Get a specific article
+POST /articles            # Create a new article
+PUT /articles/123         # Update article 123
+DELETE /articles/123      # Delete article 123
+
+/* Bad - using verbs in URLs */
+GET /getArticles
+GET /getArticle/123
+POST /createArticle
+PUT /updateArticle/123
+DELETE /deleteArticle/123
+                    </code></pre>
+                </div>
+                
+                <h2>Use HTTP Methods Correctly</h2>
+                <p>
+                    RESTful APIs should use HTTP methods according to their defined purpose:
+                </p>
+                
+                <ul>
+                    <li><strong>GET</strong>: Retrieve a resource or collection of resources (read-only)</li>
+                    <li><strong>POST</strong>: Create a new resource</li>
+                    <li><strong>PUT</strong>: Update a resource by replacing it entirely</li>
+                    <li><strong>PATCH</strong>: Partially update a resource</li>
+                    <li><strong>DELETE</strong>: Remove a resource</li>
+                </ul>
+                
+                <p>
+                    Making proper use of these methods ensures your API follows standard conventions, making it more intuitive for developers.
+                </p>
+                
+                <h2>Use Proper HTTP Status Codes</h2>
+                <p>
+                    HTTP response status codes provide valuable information about the result of a request. Using them correctly makes your API more self-descriptive and easier to debug.
+                </p>
+                
+                <div class="code-block">
+                    <pre><code class="javascript">
+// Success responses
+200 OK              // Standard success response
+201 Created         // Resource created successfully
+204 No Content      // Success but no content to return (e.g., for DELETE)
+
+// Client error responses
+400 Bad Request     // Invalid request format
+401 Unauthorized    // Authentication required
+403 Forbidden       // Authentication succeeded but user lacks permissions
+404 Not Found       // Resource not found
+422 Unprocessable Entity  // Validation errors
+
+// Server error responses
+500 Internal Server Error  // Something went wrong on the server
+503 Service Unavailable    // Server temporarily unavailable
+                    </code></pre>
+                </div>
+                
+                <h2>Use Plural Nouns for Collection Resources</h2>
+                <p>
+                    For consistency and clarity, use plural nouns for collections and allow accessing specific items by ID:
+                </p>
+                
+                <div class="code-block">
+                    <pre><code class="http">
+GET /articles              # Get all articles
+GET /articles/123          # Get article with ID 123
+GET /articles/123/comments # Get all comments for article 123
+                    </code></pre>
+                </div>
+                
+                <h2>Nest Resources for Relationships</h2>
+                <p>
+                    When resources are related, design endpoints that reflect these relationships. However, don't nest resources too deeply as it can make the API harder to use.
+                </p>
+                
+                <div class="code-block">
+                    <pre><code class="http">
+/* Good - One level of nesting */
+GET /articles/123/comments        # Get all comments for article 123
+POST /articles/123/comments       # Add a comment to article 123
+
+/* Avoid - Too deep nesting */
+GET /articles/123/comments/456/replies/789  # Too many levels
+                    </code></pre>
+                </div>
+                
+                <p>
+                    For deeply nested resources, consider using query parameters or creating separate endpoints.
+                </p>
+                
+                <h2>Use Consistent Naming Conventions</h2>
+                <p>
+                    Consistency is key to a good API design. Choose a naming convention and stick to it throughout your API:
+                </p>
+                
+                <ul>
+                    <li><strong>Use kebab-case or snake_case for URLs</strong> (e.g., <code>/blog-posts</code> or <code>/blog_posts</code>)</li>
+                    <li><strong>Use camelCase or snake_case for query parameters</strong> (e.g., <code>?sortBy=createdAt</code> or <code>?sort_by=created_at</code>)</li>
+                    <li><strong>Use camelCase or snake_case for JSON property names</strong>, matching your language conventions</li>
+                </ul>
+                
+                <h2>Implement Proper Filtering, Sorting, and Pagination</h2>
+                <p>
+                    For collections that might return many items, provide mechanisms for filtering, sorting, and pagination through query parameters:
+                </p>
+                
+                <div class="code-block">
+                    <pre><code class="http">
+# Filtering
+GET /articles?status=published
+GET /articles?author=john
+GET /articles?category=technology
+
+# Sorting
+GET /articles?sort=created_at
+GET /articles?sort=-created_at    # Descending order with the minus prefix
+
+# Pagination
+GET /articles?limit=10&offset=20
+GET /articles?page=2&per_page=15
+                    </code></pre>
+                </div>
+                
+                <p>
+                    Include metadata about pagination in your responses:
+                </p>
+                
+                <div class="code-block">
+                    <pre><code class="json">
+{
+  "data": [...],
+  "meta": {
+    "total": 50,
+    "per_page": 10,
+    "current_page": 2,
+    "last_page": 5,
+    "from": 11,
+    "to": 20
+  },
+  "links": {
+    "self": "/articles?page=2",
+    "first": "/articles?page=1",
+    "prev": "/articles?page=1",
+    "next": "/articles?page=3",
+    "last": "/articles?page=5"
+  }
+}
+                    </code></pre>
+                </div>
+                
+                <h2>Versioning Your API</h2>
+                <p>
+                    APIs evolve over time. To prevent breaking changes from affecting existing clients, implement versioning. There are several approaches:
+                </p>
+                
+                <div class="code-block">
+                    <pre><code class="http">
+# URI path versioning
+GET /v1/articles
+GET /v2/articles
+
+# Query parameter versioning
+GET /articles?version=1
+GET /articles?version=2
+
+# Custom header versioning
+GET /articles
+API-Version: 1
+
+# Accept header versioning
+GET /articles
+Accept: application/vnd.mycompany.v1+json
+                    </code></pre>
+                </div>
+                
+                <p>
+                    URI path versioning is most common as it's the simplest to understand and implement.
+                </p>
+                
+                <h2>Use Proper Error Handling</h2>
+                <p>
+                    Well-structured error responses help developers debug issues. Include helpful error messages, error codes, and potentially links to documentation.
+                </p>
+                
+                <div class="code-block">
+                    <pre><code class="json">
+{
+  "error": {
+    "code": "VALIDATION_ERROR",
+    "message": "The request could not be processed due to validation errors",
+    "status": 422,
+    "details": [
+      {
+        "field": "email",
+        "message": "Must be a valid email address"
+      },
+      {
+        "field": "password",
+        "message": "Must be at least 8 characters long"
+      }
+    ],
+    "documentation_url": "https://api.example.com/docs/errors/validation"
+  }
+}
+                    </code></pre>
+                </div>
+                
+                <h2>Implement HATEOAS for Discoverability</h2>
+                <p>
+                    HATEOAS (Hypermedia as the Engine of Application State) enhances API discoverability by including relevant links in responses. This helps clients navigate the API without prior knowledge of its structure.
+                </p>
+                
+                <div class="code-block">
+                    <pre><code class="json">
+{
+  "id": 123,
+  "title": "Introduction to REST API Design",
+  "content": "...",
+  "_links": {
+    "self": {
+      "href": "/articles/123"
+    },
+    "comments": {
+      "href": "/articles/123/comments"
+    },
+    "author": {
+      "href": "/users/456"
+    },
+    "related": [
+      {
+        "href": "/articles/124",
+        "title": "Advanced REST API Design"
+      }
+    ]
+  }
+}
+                    </code></pre>
+                </div>
+                
+                <h2>Security Best Practices</h2>
+                <p>
+                    Security should never be an afterthought. Here are some essential practices:
+                </p>
+                
+                <ul>
+                    <li><strong>Use HTTPS</strong>: Always secure your API with TLS/SSL</li>
+                    <li><strong>Implement proper authentication</strong>: Use OAuth 2.0, API keys, or JWT</li>
+                    <li><strong>Apply rate limiting</strong>: Protect against abuse and DoS attacks</li>
+                    <li><strong>Validate and sanitize inputs</strong>: Prevent injection attacks</li>
+                    <li><strong>Apply appropriate CORS headers</strong>: Control access to your API from browsers</li>
+                </ul>
+                
+                <h2>Documentation Is Crucial</h2>
+                <p>
+                    Even the best-designed API is difficult to use without proper documentation. Consider implementing:
+                </p>
+                
+                <ul>
+                    <li>Comprehensive API reference (e.g., using Swagger/OpenAPI)</li>
+                    <li>Code examples in multiple languages</li>
+                    <li>Getting started guides</li>
+                    <li>Authentication instructions</li>
+                    <li>Detailed error documentation</li>
+                </ul>
+                
+                <h2>Conclusion</h2>
+                <p>
+                    Designing RESTful APIs with these best practices will make your API more intuitive, consistent, and developer-friendly. Remember that a good API is one that developers enjoy using because it's predictable, well-documented, and follows established patterns.
+                </p>
+                <p>
+                    No API design is perfect from the start—it's an iterative process. Listen to feedback from your API consumers and be prepared to evolve your design over time while maintaining backward compatibility.
+                </p>
+                <p>
+                    Happy API designing!
+                </p>
+            </div>
+
+            <div class="post-footer" data-aos="fade-up">
+                <div class="post-navigation">
+                    <div class="post-nav-prev">
+                        <span>Previous Article</span>
+                        <a href="building-realtime-apps-with-websockets.html">Building Real-time Apps with WebSockets</a>
+                    </div>
+                    <div class="post-nav-next">
+                        <span>Next Article</span>
+                        <a href="#">Mastering React Hooks: Beyond the Basics</a>
+                    </div>
+                </div>
+
+                <div class="post-author-bio" data-aos="fade-up">
+                    <img src="../img/author.jpg" alt="Shahorior">
+                    <div class="author-info">
+                        <h3>Shahorior</h3>
+                        <p>Full-stack developer with a passion for creating intuitive, dynamic user experiences. Specializing in JavaScript, React, and Node.js.</p>
+                        <div class="author-social">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-dev"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post-comments" data-aos="fade-up">
+                    <h3>Leave a Comment</h3>
+                    <div class="comment-form">
+                        <form>
+                            <div class="form-group">
+                                <input type="text" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea placeholder="Your Comment" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn primary-btn">Post Comment</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="related-posts">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Related Articles</h2>
+            <div class="blog-grid">
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-image">
+                        <img src="../img/blog-nodejs-microservices.jpg" alt="Node.js Microservices">
+                    </div>
+                    <div class="blog-info">
+                        <div class="blog-meta">
+                            <span class="date"><i class="far fa-calendar"></i> February 20, 2023</span>
+                            <span class="read-time"><i class="far fa-clock"></i> 9 min read</span>
+                        </div>
+                        <h2>Building Scalable Microservices with Node.js</h2>
+                        <p>
+                            Learn how to design, implement, and deploy a scalable microservices architecture using Node.js, Docker, and Kubernetes.
+                        </p>
+                        <div class="blog-tags">
+                            <span>Node.js</span>
+                            <span>Microservices</span>
+                        </div>
+                        <a href="#" class="read-more">
+                            Read Article <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-image">
+                        <img src="../img/blog-websockets.jpg" alt="WebSockets">
+                    </div>
+                    <div class="blog-info">
+                        <div class="blog-meta">
+                            <span class="date"><i class="far fa-calendar"></i> June 15, 2023</span>
+                            <span class="read-time"><i class="far fa-clock"></i> 8 min read</span>
+                        </div>
+                        <h2>Building Real-time Apps with WebSockets</h2>
+                        <p>
+                            Learn how to implement real-time functionality in your web applications using WebSockets for instant updates.
+                        </p>
+                        <div class="blog-tags">
+                            <span>JavaScript</span>
+                            <span>WebSockets</span>
+                        </div>
+                        <a href="building-realtime-apps-with-websockets.html" class="read-more">
+                            Read Article <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toast notification -->
+    <div class="toast" id="toast-notification">
+        <div class="toast-content">
+            <i class="fas fa-check-circle"></i>
+            <span id="toast-message">Link copied to clipboard!</span>
+        </div>
+        <div class="toast-progress"></div>
+    </div>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" title="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Shahorior. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/blog.js"></script>
+    <script>
+        // Initialize syntax highlighting
+        document.addEventListener('DOMContentLoaded', () => {
+            hljs.highlightAll();
+            
+            // Copy post URL functionality
+            const copyLinkBtn = document.getElementById('copy-post-link');
+            if (copyLinkBtn) {
+                copyLinkBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const url = window.location.href;
+                    
+                    navigator.clipboard.writeText(url).then(() => {
+                        const toast = document.getElementById('toast-notification');
+                        const toastMessage = document.getElementById('toast-message');
+                        
+                        if (toast && toastMessage) {
+                            toastMessage.textContent = 'Link copied to clipboard!';
+                            toast.classList.add('show');
+                            
+                            setTimeout(() => {
+                                toast.classList.remove('show');
+                            }, 3000);
+                        }
+                    }).catch(err => {
+                        console.error('Failed to copy link: ', err);
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html> 

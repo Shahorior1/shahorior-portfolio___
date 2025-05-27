@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahorior's Blog</title>
+    <meta name="description" content="Exploring web development, programming, and technology. Tutorials, insights and best practices from a passionate developer.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/effects.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body class="loading">
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <svg class="logo-svg" width="100" height="100" viewBox="0 0 100 100">
+                <path d="M30,50 L70,20 L70,80 L30,50 Z" class="logo-path"></path>
+            </svg>
+            <div class="loading-text">
+                <span>L</span>
+                <span>O</span>
+                <span>A</span>
+                <span>D</span>
+                <span>I</span>
+                <span>N</span>
+                <span>G</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Transition -->
+    <div class="page-transition"></div>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch">
+        <label for="theme-switch" class="switch-label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span class="ball"></span>
+        </label>
+    </div>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="index.html">Shahorior</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#skills">Skills</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="#" class="active">Blog</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="blog-hero">
+        <div class="container">
+            <img src="https://source.unsplash.com/1600x400/?blog,developer" alt="My Blog" class="blog-hero-image" data-aos="fade-up" data-aos-delay="100">
+            <h1 class="section-title" data-text="My Blog" data-aos="fade-up">My Blog</h1>
+            <p class="blog-intro" data-aos="fade-up" data-aos-delay="200">
+                Sharing insights, tutorials, and thoughts on web development, programming, and technology.
+            </p>
+            
+            <!-- Search Bar -->
+            <div class="blog-search" data-aos="fade-up" data-aos-delay="250">
+                <form class="search-form">
+                    <input type="text" id="blog-search-input" placeholder="Search articles..." aria-label="Search articles">
+                    <button type="submit" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+            
+            <div class="blog-categories" data-aos="fade-up" data-aos-delay="300">
+                <button class="category-btn active" data-category="all">All</button>
+                <button class="category-btn" data-category="javascript">JavaScript</button>
+                <button class="category-btn" data-category="react">React</button>
+                <button class="category-btn" data-category="node">Node.js</button>
+                <button class="category-btn" data-category="design">Design</button>
+                <div class="categories-dropdown">
+                    <button class="more-categories-btn">
+                        More Topics <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <button class="category-btn" data-category="typescript">TypeScript</button>
+                        <button class="category-btn" data-category="css">CSS</button>
+                        <button class="category-btn" data-category="performance">Performance</button>
+                        <button class="category-btn" data-category="tools">Tools</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-content">
+        <div class="container">
+            <!-- Filter results info -->
+            <div class="filter-results" data-aos="fade-up">
+                <p>Showing <span id="results-count">all</span> articles</p>
+                <div class="active-filters" id="active-filters"></div>
+                <button id="clear-filters" class="clear-btn">Clear All Filters</button>
+            </div>
+
+            <div class="blog-grid">
+                <!-- Featured Article -->
+                <article class="blog-card featured" data-category="javascript,react" data-aos="fade-up">
+                    <div class="blog-image">
+                        <span class="blog-tag">Featured</span>
+                        <img src="https://source.unsplash.com/800x450/?websocket" alt="Real-time Apps with WebSockets">
+                        <div class="blog-overlay">
+                            <div class="blog-share">
+                                <button class="share-btn"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <a href="#" target="_blank" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/shahorior_/?igsh=bGg1NWY2d2IzODJu#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" aria-label="Copy link" class="copy-link"><i class="fas fa-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-info">
+                        <div class="blog-meta">
+                            <span class="date"><i class="far fa-calendar"></i> June 15, 2023</span>
+                            <span class="read-time"><i class="far fa-clock"></i> 8 min read</span>
+                        </div>
+                        <h2>Building Real-time Apps with WebSockets</h2>
+                        <p>
+                            Learn how to implement real-time functionality in your web applications using WebSockets. This comprehensive guide covers everything from basic setup to advanced patterns and optimization techniques.
+                        </p>
+                        <div class="blog-tags">
+                            <span>JavaScript</span>
+                            <span>WebSockets</span>
+                            <span>Real-time</span>
+                        </div>
+                        <a href="blog/building-realtime-apps-with-websockets.html" class="read-more">
+                            Read Article <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- Regular Articles -->
+                <article class="blog-card" data-category="javascript,node" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-image">
+                        <img src="https://source.unsplash.com/800x450/?api,rest" alt="RESTful API Design">
+                        <div class="blog-overlay">
+                            <div class="blog-share">
+                                <button class="share-btn"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <a href="#" target="_blank" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/shahorior_/?igsh=bGg1NWY2d2IzODJu#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" aria-label="Copy link" class="copy-link"><i class="fas fa-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-info">
+                        <div class="blog-meta">
+                            <span class="date"><i class="far fa-calendar"></i> May 22, 2023</span>
+                            <span class="read-time"><i class="far fa-clock"></i> 6 min read</span>
+                        </div>
+                        <h2>Best Practices for RESTful API Design</h2>
+                        <p>
+                            A deep dive into designing clean, efficient, and developer-friendly RESTful APIs. Covers naming conventions, status codes, versioning, and authentication.
+                        </p>
+                        <div class="blog-tags">
+                            <span>API</span>
+                            <span>REST</span>
+                            <span>Node.js</span>
+                        </div>
+                        <a href="blog/best-practices-restful-api-design.html" class="read-more">
+                            Read Article <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <article class="blog-card" data-category="react" data-aos="fade-up" data-aos-delay="300">
+                    <div class="blog-image">
+                        <img src="https://source.unsplash.com/800x450/?react,hooks" alt="React Hooks">
+                        <div class="blog-overlay">
+                            <div class="blog-share">
+                                <button class="share-btn"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <a href="#" target="_blank" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/shahorior_/?igsh=bGg1NWY2d2IzODJu#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" aria-label="Copy link" class="copy-link"><i class="fas fa-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-info">
+                        <div class="blog-meta">
+                            <span class="date"><i class="far fa-calendar"></i> April 10, 2023</span>
+                            <span class="read-time"><i class="far fa-clock"></i> 5 min read</span>
+                        </div>
+                        <h2>Mastering React Hooks: Beyond the Basics</h2>
+                        <p>
+                            Take your React skills to the next level by exploring advanced patterns with React Hooks. Learn custom hooks, optimization strategies, and real-world examples.
+                        </p>
+                        <div class="blog-tags">
+                            <span>React</span>
+                            <span>Hooks</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <a href="blog/mastering-react-hooks.html" class="read-more">
+                            Read Article <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <article class="blog-card" data-category="design" data-aos="fade-up" data-aos-delay="400">
+                    <div class="blog-image">
+                        <img src="https://source.unsplash.com/800x450/?threejs" alt="Three.js Animations">
+                        <div class="blog-overlay">
+                            <div class="blog-share">
+                                <button class="share-btn"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <a href="#" target="_blank" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/shahorior_/?igsh=bGg1NWY2d2IzODJu#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" aria-label="Copy link" class="copy-link"><i class="fas fa-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-info">
+                        <div class="blog-meta">
+                            <span class="date"><i class="far fa-calendar"></i> March 5, 2023</span>
+                            <span class="read-time"><i class="far fa-clock"></i> 7 min read</span>
+                        </div>
+                        <h2>Introduction to Three.js Animations</h2>
+                        <p>
+                            Discover how to create stunning 3D animations for the web using Three.js. This tutorial walks through setting up a scene, adding objects, and creating smooth animations.
+                        </p>
+                        <div class="blog-tags">
+                            <span>Three.js</span>
+                            <span>3D</span>
+                            <span>Animation</span>
+                        </div>
+                        <a href="blog/intro-to-threejs-animations.html" class="read-more">
+                            Read Article <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <article class="blog-card" data-category="node" data-aos="fade-up" data-aos-delay="500">
+                    <div class="blog-image">
+                        <img src="https://source.unsplash.com/800x450/?nodejs,microservices" alt="Node.js Microservices">
+                        <div class="blog-overlay">
+                            <div class="blog-share">
+                                <button class="share-btn"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <a href="#" target="_blank" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/shahorior_/?igsh=bGg1NWY2d2IzODJu#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" aria-label="Copy link" class="copy-link"><i class="fas fa-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-info">
+                        <div class="blog-meta">
+                            <span class="date"><i class="far fa-calendar"></i> February 20, 2023</span>
+                            <span class="read-time"><i class="far fa-clock"></i> 9 min read</span>
+                        </div>
+                        <h2>Building Scalable Microservices with Node.js</h2>
+                        <p>
+                            Learn how to design, implement, and deploy a scalable microservices architecture using Node.js, Docker, and Kubernetes. Includes real-world examples and best practices.
+                        </p>
+                        <div class="blog-tags">
+                            <span>Node.js</span>
+                            <span>Microservices</span>
+                            <span>Docker</span>
+                        </div>
+                        <a href="blog/building-nodejs-microservices.html" class="read-more">
+                            Read Article <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- New Article -->
+                <article class="blog-card" data-category="typescript" data-aos="fade-up" data-aos-delay="600">
+                    <div class="blog-image">
+                        <span class="blog-tag new-tag">New</span>
+                        <img src="https://source.unsplash.com/800x450/?typescript" alt="TypeScript Advanced Types">
+                        <div class="blog-overlay">
+                            <div class="blog-share">
+                                <button class="share-btn"><i class="fas fa-share-alt"></i></button>
+                                <div class="share-options">
+                                    <a href="#" target="_blank" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/shahorior_/?igsh=bGg1NWY2d2IzODJu#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" aria-label="Copy link" class="copy-link"><i class="fas fa-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-info">
+                        <div class="blog-meta">
+                            <span class="date"><i class="far fa-calendar"></i> June 28, 2023</span>
+                            <span class="read-time"><i class="far fa-clock"></i> 7 min read</span>
+                        </div>
+                        <h2>Advanced TypeScript: Mastering Generic Types</h2>
+                        <p>
+                            Explore advanced TypeScript type features that boost code reliability and developer experience. Learn how to leverage generics, conditional types, and utility types.
+                        </p>
+                        <div class="blog-tags">
+                            <span>TypeScript</span>
+                            <span>JavaScript</span>
+                            <span>Types</span>
+                        </div>
+                        <a href="blog/advanced-typescript-generic-types.html" class="read-more">
+                            Read Article <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+            
+            <!-- No results message -->
+            <div class="no-results" style="display: none;" data-aos="fade-up">
+                <i class="fas fa-search"></i>
+                <h3>No matching articles found</h3>
+                <p>Try adjusting your search or filter to find what you're looking for.</p>
+                <button id="reset-search" class="btn secondary-btn">Reset Filters</button>
+            </div>
+            
+            <div class="pagination" data-aos="fade-up">
+                <a href="#" class="page-btn active">1</a>
+                <a href="#" class="page-btn">2</a>
+                <a href="#" class="page-btn">3</a>
+                <a href="#" class="page-btn next"><i class="fas fa-chevron-right"></i></a>
+            </div>
+            
+            <div class="newsletter" data-aos="fade-up">
+                <h3><i class="far fa-envelope"></i> Subscribe to my newsletter</h3>
+                <p>Get the latest articles and resources straight to your inbox.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn primary-btn">Subscribe</button>
+                </form>
+            </div>
+            
+            <!-- Blog Topics Section -->
+            <div class="blog-topics" data-aos="fade-up">
+                <h3>Explore Topics</h3>
+                <div class="topic-grid">
+                    <a href="#" class="topic-card" data-category="javascript">
+                        <i class="fab fa-js"></i>
+                        <h4>JavaScript</h4>
+                        <span class="topic-count">12 articles</span>
+                    </a>
+                    <a href="#" class="topic-card" data-category="react">
+                        <i class="fab fa-react"></i>
+                        <h4>React</h4>
+                        <span class="topic-count">8 articles</span>
+                    </a>
+                    <a href="#" class="topic-card" data-category="node">
+                        <i class="fab fa-node-js"></i>
+                        <h4>Node.js</h4>
+                        <span class="topic-count">6 articles</span>
+                    </a>
+                    <a href="#" class="topic-card" data-category="design">
+                        <i class="fas fa-palette"></i>
+                        <h4>Design</h4>
+                        <span class="topic-count">5 articles</span>
+                    </a>
+                    <a href="#" class="topic-card" data-category="typescript">
+                        <i class="fas fa-code"></i>
+                        <h4>TypeScript</h4>
+                        <span class="topic-count">4 articles</span>
+                    </a>
+                    <a href="#" class="topic-card" data-category="tools">
+                        <i class="fas fa-tools"></i>
+                        <h4>Dev Tools</h4>
+                        <span class="topic-count">7 articles</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" title="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Toast notification -->
+    <div class="toast" id="toast-notification">
+        <div class="toast-content">
+            <i class="fas fa-check-circle"></i>
+            <span id="toast-message">Link copied to clipboard!</span>
+        </div>
+        <div class="toast-progress"></div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Shahorior. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/blog.js"></script>
+    <script>
+        // Theme toggle functionality
+        const themeSwitch = document.getElementById('theme-switch');
+        
+        // Check for saved user preference
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.remove('dark-theme');
+            themeSwitch.checked = false;
+        } else {
+            // Default to dark theme if no preference is saved or if dark theme was saved
+            document.body.classList.add('dark-theme');
+            themeSwitch.checked = true;
+            if (!localStorage.getItem('theme')) {
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+        
+        // Handle theme toggle click
+        themeSwitch.addEventListener('change', function() {
+            if (this.checked) {
+                document.body.classList.add('dark-theme');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.body.classList.remove('dark-theme');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
+</body>
+</html> 

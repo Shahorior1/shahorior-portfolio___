@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahorior's Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/effects.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/TagCloud@2.2.0/dist/TagCloud.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .animated-bg {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .animated-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.05;
+            z-index: 0;
+            animation: gradientBG 15s ease infinite;
+            background: linear-gradient(270deg, #3a86ff, #8338ec, #ff006e);
+            background-size: 600% 600%;
+        }
+        
+        .projects.animated-bg::before {
+            background: linear-gradient(270deg, #ff006e, #3a86ff, #8338ec);
+            background-size: 600% 600%;
+            animation-duration: 18s;
+        }
+        
+        .skills.animated-bg::before {
+            background: linear-gradient(270deg, #8338ec, #ff006e, #3a86ff);
+            background-size: 600% 600%;
+            animation-duration: 20s;
+        }
+    </style>
+</head>
+<body class="loading">
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <svg class="logo-svg" width="100" height="100" viewBox="0 0 100 100">
+                <path d="M30,50 L70,20 L70,80 L30,50 Z" class="logo-path"></path>
+            </svg>
+            <div class="loading-text">
+                <span>L</span>
+                <span>O</span>
+                <span>A</span>
+                <span>D</span>
+                <span>I</span>
+                <span>N</span>
+                <span>G</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Transition -->
+    <div class="page-transition"></div>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch">
+        <label for="theme-switch" class="switch-label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span class="ball"></span>
+        </label>
+    </div>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="#">Shahorior</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="cv.html">CV</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div id="particles-js"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hi, I'm <span class="highlight">Shahorior</span></h1>
+                <h2>Full Stack Developer</h2>
+                <p>I build beautiful and functional web applications.</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn primary-btn">View My Work</a>
+                    <a href="#contact" class="btn secondary-btn">Contact Me</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/Shahorior1" target="_blank" data-tooltip="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.facebook.com/share/15R1nVbv7h/" target="_blank" data-tooltip="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/_____shahorior____/#" target="_blank" data-tooltip="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about animated-bg">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image" data-aos="fade-right" data-aos-delay="200" style="animation: floating 4s ease-in-out infinite;">
+                    <img src="img/profile.jpg" alt="Profile Picture">
+                </div>
+                <div class="about-text" data-aos="fade-left" data-aos-delay="300">
+                    <p>Hello! I'm <span class="highlight">Shahorior</span>, a passionate full-stack developer with a keen interest in creating engaging web experiences. With a strong foundation in both front-end and back-end technologies, I strive to build applications that are not only visually appealing but also highly functional.</p>
+                    <p>I enjoy solving complex problems and continuously learning new technologies to stay at the forefront of web development. When I'm not coding, you can find me reading tech blogs, contributing to open-source projects, or exploring new coffee shops in my city.</p>
+                    <div class="tech-stack">
+                        <span>JavaScript</span>
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>TypeScript</span>
+                        <span>MongoDB</span>
+                    </div>
+                    <a href="resume.html" class="btn primary-btn download-btn">
+                        <i class="fas fa-file-alt"></i>
+                        <span>View Resume</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects animated-bg">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="filters" data-aos="fade-up" data-aos-delay="100">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+            </div>
+            <div class="project-grid">
+                <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <img src="img/project1.jpg" alt="Project 1">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>E-Commerce Website</h3>
+                                <p>A full-featured online store with product catalog, shopping cart, and payment integration.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>E-Commerce Website</h3>
+                        <p>A full-featured online store with product catalog, shopping cart, and payment integration.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://saporabd.com/" target="_blank" class="btn small-btn primary-btn">Live Demo</a>
+                            <a href="https://github.com/Shahorior1/saporabd" target="_blank" class="btn small-btn secondary-btn">Source Code</a>
+                            <a href="case-study-ecommerce.html" class="btn small-btn accent-btn">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="mobile" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-image">
+                        <img src="img/project2.png" alt="Project 2">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>Task Management App</h3>
+                                <p>A productivity application for managing tasks, deadlines, and team collaboration.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Task Management App</h3>
+                        <p>A productivity application for managing tasks, deadlines, and team collaboration.</p>
+                        <div class="project-tech">
+                            <span>Vue.js</span>
+                            <span>Express</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://task-management-roan-one.vercel.app/" target="_blank" class="btn small-btn primary-btn">Live Demo</a>
+                            <a href="https://github.com/Shahorior1/task-management" target="_blank" class="btn small-btn secondary-btn">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="design" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-image">
+                        <img src="img/project3.jpg" alt="Project 3">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>Weather Dashboard</h3>
+                                <p>Real-time weather forecasting application with location-based data and interactive maps.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Weather Dashboard</h3>
+                        <p>Real-time weather forecasting application with location-based data and interactive maps.</p>
+                        <div class="project-tech">
+                            <span>JavaScript</span>
+                            <span>API Integration</span>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank" class="btn small-btn primary-btn">Live Demo</a>
+                            <a href="#" target="_blank" class="btn small-btn secondary-btn">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="500">
+                    <div class="project-image">
+                        <img src="img/plant-shop.jpg" alt="Plant Shop Landing Page">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>Plant Shop Landing Page</h3>
+                                <p>A modern, responsive landing page for a plant shop with beautiful UI and smooth animations.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Plant Shop Landing Page</h3>
+                        <p>A modern, responsive landing page for a plant shop with beautiful UI and smooth animations.</p>
+                        <div class="project-tech">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://plant-shop-landing-page.netlify.app/" target="_blank" class="btn small-btn primary-btn">Live Demo</a>
+                            <a href="https://github.com/Shahorior1/plant-shop-landing-page" target="_blank" class="btn small-btn secondary-btn">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="600">
+                    <div class="project-image">
+                        <img src="img/proxy-bdix.jpg" alt="Proxy BDIX">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>Proxy BDIX</h3>
+                                <p>A network proxy solution providing optimized connectivity for BDIX (Bangladesh Internet Exchange) users.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Proxy BDIX</h3>
+                        <p>A network proxy solution providing optimized connectivity for BDIX (Bangladesh Internet Exchange) users with improved speeds and access to local content.</p>
+                        <div class="project-tech">
+                            <span>Node.js</span>
+                            <span>Networking</span>
+                            <span>Express</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://proxy-bdix.netlify.app/" target="_blank" class="btn small-btn primary-btn">Live Demo</a>
+                            <a href="https://github.com/Shahorior1/proxy-bdix" target="_blank" class="btn small-btn secondary-btn">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="700">
+                    <div class="project-image">
+                        <img src="img/jin-store (2).jpg" alt="Jin Store E-Commerce">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>Jin Store E-Commerce</h3>
+                                <p>A modern e-commerce platform with product catalog, user authentication, shopping cart, and payment processing.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Jin Store E-Commerce</h3>
+                        <p>A feature-rich online shopping platform with responsive design, advanced product filtering, user accounts, wishlist functionality, and secure checkout.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>Redux</span>
+                            <span>Stripe</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://ecommerce-master-navy.vercel.app/" target="_blank" class="btn small-btn primary-btn">Live Demo</a>
+                            <a href="https://github.com/Shahorior1/ecommerce-master" target="_blank" class="btn small-btn secondary-btn">Source Code</a>
+                            <a href="case-study-jin-store.html" class="btn small-btn accent-btn">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills animated-bg">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            
+            <div class="skills-grid">
+                <!-- Programming Languages -->
+                <div class="skill-category">
+                    <h4 style="color: gray;"><i class="fas fa-code" style="color: #333;"></i> Programming Languages</h4>
+                    <ul class="skill-list">
+                        <li>
+                            <div class="skill-name-level">
+                                <div class="skill-name"><i class="fab fa-js"></i> JavaScript/TypeScript</div>
+                                <span class="skill-level expert">EXPERT</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar animated"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skill-name-level">
+                                <div class="skill-name"><i class="fab fa-html5"></i> HTML5/CSS3</div>
+                                <span class="skill-level expert">EXPERT</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar animated"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skill-name-level">
+                                <div class="skill-name"><i class="fab fa-python"></i> Python</div>
+                                <span class="skill-level intermediate">INTERMEDIATE</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar animated"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skill-name-level">
+                                <div class="skill-name"><i class="fab fa-php"></i> PHP</div>
+                                <span class="skill-level intermediate">INTERMEDIATE</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar animated"></div>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <div class="skill-icon-grid">
+                        <div class="skill-icon">
+                            <div class="skill-icon-img">
+                                <i class="fab fa-js"></i>
+                            </div>
+                            <div class="skill-icon-name">JavaScript</div>
+                        </div>
+                        <div class="skill-icon">
+                            <div class="skill-icon-img">
+                                <i class="fab fa-html5"></i>
+                            </div>
+                            <div class="skill-icon-name">HTML5</div>
+                        </div>
+                        <div class="skill-icon">
+                            <div class="skill-icon-img">
+                                <i class="fab fa-css3-alt"></i>
+                            </div>
+                            <div class="skill-icon-name">CSS3</div>
+                        </div>
+                        <div class="skill-icon">
+                            <div class="skill-icon-img">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <div class="skill-icon-name">Python</div>
+                        </div>
+                        <div class="skill-icon">
+                            <div class="skill-icon-img">
+                                <i class="fab fa-php"></i>
+                            </div>
+                            <div class="skill-icon-name">PHP</div>
+                        </div>
+                        <div class="skill-icon">
+                            <div class="skill-icon-img">
+                                <i class="fab fa-java"></i>
+                            </div>
+                            <div class="skill-icon-name">Java</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Frameworks & Libraries -->
+                <div class="skill-category">
+                    <h4 style="color: gray;"><i class="fas fa-cubes" style="color: gray;"></i> Frameworks & Libraries</h4>
+                    <ul class="skill-list">
+                        <li>
+                            <div class="skill-name-level">
+                                <div class="skill-name"><i class="fab fa-react"></i> React</div>
+                                <span class="skill-level expert">EXPERT</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar animated"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skill-name-level">
+                                <div class="skill-name"><i class="fab fa-node-js"></i> Node.js/Express</div>
+                                <span class="skill-level expert">EXPERT</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar animated"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skill-name-level">
+                                <div class="skill-name"><i class="fab fa-vuejs"></i> Vue.js</div>
+                                <span class="skill-level intermediate">INTERMEDIATE</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar animated"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skill-name-level">
+                                <div class="skill-name"><i class="fas fa-bolt"></i> Next.js</div>
+                                <span class="skill-level advanced">ADVANCED</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar animated"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skill-name-level">
+                                <div class="skill-name"><i class="fab fa-css3"></i> Tailwind CSS</div>
+                                <span class="skill-level advanced">ADVANCED</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar animated"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Databases -->
+                <div class="skill-category">
+                    <h4 style="color: gray;"><i class="fas fa-database" style="color: gray;"></i> Databases</h4>
+                    <ul class="skill-list">
+                        <li>
+                            <div class="skill-name-level">
+                                <div class="skill-name"><i class="fas fa-leaf"></i> MongoDB</div>
+                                <span class="skill-level expert">EXPERT</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar animated"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skill-name-level">
+                                <div class="skill-name"><i class="fas fa-server"></i> MySQL</div>
+                                <span class="skill-level advanced">ADVANCED</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar animated"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skill-name-level">
+                                <div class="skill-name"><i class="fas fa-database"></i> PostgreSQL</div>
+                                <span class="skill-level intermediate">INTERMEDIATE</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar animated"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skill-name-level">
+                                <div class="skill-name"><i class="fas fa-fire"></i> Firebase</div>
+                                <span class="skill-level advanced">ADVANCED</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar animated"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- DevOps & Tools -->
+                <div class="skill-category">
+                    <h4 style="color: gray;"><i class="fas fa-tools" style="color: gray;"></i> DevOps & Tools</h4>
+                    <ul class="skill-list">
+                        <li>
+                            <div class="skill-name-level">
+                                <div class="skill-name"><i class="fab fa-git-alt"></i> Git/GitHub</div>
+                                <span class="skill-level expert">EXPERT</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar animated"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skill-name-level">
+                                <div class="skill-name"><i class="fab fa-docker"></i> Docker</div>
+                                <span class="skill-level intermediate">INTERMEDIATE</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar animated"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skill-name-level">
+                                <div class="skill-name"><i class="fab fa-aws"></i> AWS</div>
+                                <span class="skill-level intermediate">INTERMEDIATE</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar animated"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skill-name-level">
+                                <div class="skill-name"><i class="fas fa-infinity"></i> CI/CD</div>
+                                <span class="skill-level advanced">ADVANCED</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar animated"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skill-name-level">
+                                <div class="skill-name"><i class="fas fa-vial"></i> Jest/Testing</div>
+                                <span class="skill-level advanced">ADVANCED</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar animated"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Testimonials</h2>
+            
+            <div class="testimonials-slider" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p>Shahorior delivered an exceptional e-commerce platform that exceeded our expectations. The attention to detail and focus on performance transformed our online business. His technical expertise made him a pleasure to work with.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ahmed Rahman">
+                            <div class="author-info">
+                                <h4>Ahmed Rahman</h4>
+                                <p>CEO, Sapora Bangladesh</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p>Working with Shahorior on our task management application was a great experience. He understood our requirements perfectly and delivered a solution that helped increase our team's productivity by 40%. Highly recommended!</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <p>Product Manager, TaskFlow</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p>Shahorior's expertise in React and UI/UX design helped us create a beautiful and functional weather dashboard. The application was not only visually appealing but also performed exceptionally well. A true professional!</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Michael Chen">
+                            <div class="author-info">
+                                <h4>Michael Chen</h4>
+                                <p>CTO, WeatherNow</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-controls" data-aos="fade-up" data-aos-delay="300">
+                <button class="testimonial-btn prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="testimonial-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="testimonial-btn next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right" data-aos-delay="200">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>sadikshahorioremon@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+8801826304852</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Dhaka, Bangladesh</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/Shahorior1" target="_blank" data-tooltip="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.facebook.com/share/15R1nVbv7h/" target="_blank" data-tooltip="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/_____shahorior____/#" target="_blank" data-tooltip="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form" data-aos="fade-left" data-aos-delay="300">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="user_name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="user_email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary-btn">
+                            Send Message <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <svg width="50" height="50" viewBox="0 0 100 100">
+                        <path d="M30,50 L70,20 L70,80 L30,50 Z" class="logo-path"></path>
+                    </svg>
+                    <p>Shahorior</p>
+                </div>
+                <p class="copyright">&copy; 2023 Shahorior. All Rights Reserved.</p>
+                <div class="back-to-top">
+                    <a href="#home"><i class="fas fa-chevron-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/3d-effect.js"></script>
+    <script src="js/particles-config.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Initialize AOS with custom settings
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true,
+            offset: 100,
+            delay: 100,
+            disable: 'mobile'
+        });
+        
+        // Theme toggle functionality
+        const themeSwitch = document.getElementById('theme-switch');
+        
+        // Check for saved user preference
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.remove('dark-theme');
+            themeSwitch.checked = false;
+        } else {
+            // Default to dark theme if no preference is saved or if dark theme was saved
+            document.body.classList.add('dark-theme');
+            themeSwitch.checked = true;
+            if (!localStorage.getItem('theme')) {
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+        
+        // Handle theme toggle click
+        themeSwitch.addEventListener('change', function() {
+            if (this.checked) {
+                document.body.classList.add('dark-theme');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.body.classList.remove('dark-theme');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
+    <script src="js/contact.js"></script>
+</body>
+</html> 

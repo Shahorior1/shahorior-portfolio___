@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jin Store E-Commerce Case Study | Shahorior's Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/effects.css">
+    <link rel="stylesheet" href="css/case-study.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body class="loading">
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <svg class="logo-svg" width="100" height="100" viewBox="0 0 100 100">
+                <path d="M30,50 L70,20 L70,80 L30,50 Z" class="logo-path"></path>
+            </svg>
+            <div class="loading-text">
+                <span>L</span>
+                <span>O</span>
+                <span>A</span>
+                <span>D</span>
+                <span>I</span>
+                <span>N</span>
+                <span>G</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Transition -->
+    <div class="page-transition"></div>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch">
+        <label for="theme-switch" class="switch-label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span class="ball"></span>
+        </label>
+    </div>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="index.html">Shahorior</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#skills">Skills</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="case-study-hero">
+        <div class="container">
+            <div class="back-link" data-aos="fade-down">
+                <a href="index.html#projects"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+            </div>
+            <h1 data-aos="fade-up">Jin Store E-Commerce Case Study</h1>
+            <div class="project-meta" data-aos="fade-up" data-aos-delay="100">
+                <div class="meta-item">
+                    <i class="far fa-calendar-alt"></i>
+                    <span>Completed: May 2023</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Duration: 4 months</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-user-friends"></i>
+                    <span>Role: Full-Stack Developer</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-tasks"></i>
+                    <span>Type: E-Commerce Platform</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image" data-aos="zoom-in">
+            <img src="img/jin-store-hero.jpg" alt="Jin Store E-Commerce">
+        </div>
+    </section>
+
+    <section class="case-study-overview">
+        <div class="container">
+            <div class="overview-grid">
+                <div class="overview-content" data-aos="fade-right">
+                    <h2>Project Overview</h2>
+                    <p>
+                        Jin Store is a modern e-commerce platform designed to deliver a premium online shopping experience 
+                        for fashion and lifestyle products. The project involved building a complete solution with an 
+                        intuitive user interface, advanced filtering capabilities, personalized recommendations, 
+                        secure payment processing, and a comprehensive admin dashboard.
+                    </p>
+                    <div class="tech-stack">
+                        <h3>Technologies Used</h3>
+                        <div class="tech-tags">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>Express</span>
+                            <span>MongoDB</span>
+                            <span>Redux</span>
+                            <span>Stripe</span>
+                            <span>Firebase Auth</span>
+                            <span>Material UI</span>
+                            <span>Cloudinary</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://jin-store.netlify.app/" target="_blank" class="btn primary-btn">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span>Live Demo</span>
+                        </a>
+                        <a href="https://github.com/Shahorior1/jin-store" target="_blank" class="btn secondary-btn">
+                            <i class="fab fa-github"></i>
+                            <span>Source Code</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="stats-cards" data-aos="fade-left">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>65%</h3>
+                            <p>Increase in user engagement with product pages</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>42%</h3>
+                            <p>Higher conversion rate on mobile devices</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>25%</h3>
+                            <p>Increase in average order value</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>55%</h3>
+                            <p>Growth in new user registrations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="problem-solution">
+        <div class="container">
+            <div class="case-study-grid">
+                <div class="case-study-card" data-aos="fade-up">
+                    <div class="card-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h2>The Problem</h2>
+                    <p>
+                        The client needed a modern e-commerce solution that addressed several challenges:
+                    </p>
+                    <ul>
+                        <li>Difficulty standing out in a crowded e-commerce market</li>
+                        <li>High cart abandonment rates at checkout</li>
+                        <li>Limited personalization capabilities</li>
+                        <li>Complex product inventory with numerous variants</li>
+                        <li>Inefficient order management and fulfillment processes</li>
+                    </ul>
+                </div>
+                
+                <div class="case-study-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h2>The Approach</h2>
+                    <p>
+                        I implemented a user-centered design approach with a focus on conversion optimization:
+                    </p>
+                    <ul>
+                        <li>Conducted competitive analysis and user research to identify opportunities</li>
+                        <li>Created interactive prototypes to validate design decisions before development</li>
+                        <li>Implemented a sleek, modern UI with Material Design principles</li>
+                        <li>Built a robust React frontend with Redux for state management</li>
+                        <li>Developed a scalable Node.js backend with comprehensive API documentation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="architecture">
+        <div class="container">
+            <h2 data-aos="fade-up">Technical Architecture</h2>
+            <div class="architecture-image" data-aos="zoom-in">
+                <img src="img/jin-store-architecture.png" alt="Jin Store Architecture Diagram">
+            </div>
+            <div class="architecture-details" data-aos="fade-up">
+                <div class="arch-column">
+                    <h3>Frontend</h3>
+                    <ul>
+                        <li><strong>React:</strong> Modern component-based UI</li>
+                        <li><strong>Redux & Redux Toolkit:</strong> State management</li>
+                        <li><strong>Material UI:</strong> Component library for consistent design</li>
+                        <li><strong>React Router:</strong> Navigation and routing</li>
+                        <li><strong>Formik & Yup:</strong> Form validation</li>
+                        <li><strong>React Query:</strong> Data fetching and caching</li>
+                    </ul>
+                </div>
+                <div class="arch-column">
+                    <h3>Backend</h3>
+                    <ul>
+                        <li><strong>Node.js:</strong> JavaScript runtime</li>
+                        <li><strong>Express:</strong> Web framework</li>
+                        <li><strong>MongoDB:</strong> NoSQL database</li>
+                        <li><strong>Firebase Auth:</strong> User authentication</li>
+                        <li><strong>Stripe API:</strong> Payment processing</li>
+                        <li><strong>Cloudinary:</strong> Image management</li>
+                    </ul>
+                </div>
+                <div class="arch-column">
+                    <h3>DevOps & Tools</h3>
+                    <ul>
+                        <li><strong>Netlify:</strong> Frontend hosting</li>
+                        <li><strong>Heroku:</strong> Backend hosting</li>
+                        <li><strong>GitHub Actions:</strong> CI/CD workflow</li>
+                        <li><strong>Jest:</strong> Unit testing</li>
+                        <li><strong>Cypress:</strong> End-to-end testing</li>
+                        <li><strong>Sentry:</strong> Error tracking</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="challenges">
+        <div class="container">
+            <h2 data-aos="fade-up">Challenges & Solutions</h2>
+            <div class="challenges-grid">
+                <div class="challenge-card" data-aos="fade-up">
+                    <h3><i class="fas fa-search"></i> Product Discovery</h3>
+                    <div class="challenge-content">
+                        <div class="challenge-desc">
+                            <p><strong>Challenge:</strong> Users struggled to find relevant products within the large catalog.</p>
+                            <p><strong>Solution:</strong> Implemented advanced filtering, search with autocomplete, and AI-powered product recommendations.</p>
+                            <p><strong>Result:</strong> 65% increase in user engagement with product pages and reduced search abandonment.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="challenge-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3><i class="fas fa-credit-card"></i> Checkout Optimization</h3>
+                    <div class="challenge-content">
+                        <div class="challenge-desc">
+                            <p><strong>Challenge:</strong> High cart abandonment rate during the checkout process.</p>
+                            <p><strong>Solution:</strong> Designed a streamlined, single-page checkout with progress indicators, saved payment methods, and guest checkout option.</p>
+                            <p><strong>Result:</strong> 30% reduction in cart abandonment and 25% increase in completed purchases.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="challenge-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3><i class="fas fa-palette"></i> Product Variants Management</h3>
+                    <div class="challenge-content">
+                        <div class="challenge-desc">
+                            <p><strong>Challenge:</strong> Complex product inventory with multiple sizes, colors, and styles creating management difficulties.</p>
+                            <p><strong>Solution:</strong> Developed a flexible product schema with variant management and dynamic inventory tracking.</p>
+                            <p><strong>Result:</strong> Simplified admin workflow and 40% reduction in inventory errors.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="challenge-card" data-aos="fade-up" data-aos-delay="300">
+                    <h3><i class="fas fa-globe"></i> Performance Optimization</h3>
+                    <div class="challenge-content">
+                        <div class="challenge-desc">
+                            <p><strong>Challenge:</strong> Image-heavy product pages leading to slow loading times.</p>
+                            <p><strong>Solution:</strong> Implemented lazy loading, image optimization via Cloudinary, and code splitting.</p>
+                            <p><strong>Result:</strong> 70% improvement in page load speed and better SEO rankings.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <h3>User Accounts & Profiles</h3>
+                    <p>Personalized user dashboards with order history, saved addresses, and wishlists.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-filter"></i>
+                    </div>
+                    <h3>Advanced Filtering</h3>
+                    <p>Multi-parameter filters with real-time updates and saved preferences.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Wishlist Management</h3>
+                    <p>Easy product saving, sharing, and transfer to shopping cart.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Secure Checkout</h3>
+                    <p>PCI-compliant payment processing with multiple payment options.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Analytics Dashboard</h3>
+                    <p>Comprehensive sales tracking, customer behavior insights, and inventory analytics.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Responsive Design</h3>
+                    <p>Optimized shopping experience across all devices with touch-friendly interfaces.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="outcomes-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Key Outcomes</h2>
+            <div class="outcomes-grid">
+                <div class="outcome-card" data-aos="fade-up">
+                    <div class="outcome-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="outcome-content">
+                        <h3>320% ROI</h3>
+                        <p>Substantial return on investment within the first six months of launch through increased sales volume.</p>
+                    </div>
+                </div>
+                <div class="outcome-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="outcome-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="outcome-content">
+                        <h3>55% New Customer Growth</h3>
+                        <p>Significant expansion of customer base through improved UX and targeted marketing capabilities.</p>
+                    </div>
+                </div>
+                <div class="outcome-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="outcome-icon">
+                        <i class="fas fa-sync"></i>
+                    </div>
+                    <div class="outcome-content">
+                        <h3>40% Higher Retention</h3>
+                        <p>Improved user satisfaction leading to higher customer loyalty and repeat purchases.</p>
+                    </div>
+                </div>
+                <div class="outcome-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="outcome-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="outcome-content">
+                        <h3>70% Time Savings</h3>
+                        <p>Automation of order processing and inventory management reduced administrative workload significantly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="conclusion-section">
+        <div class="container">
+            <div class="conclusion" data-aos="fade-up">
+                <h2>Conclusion</h2>
+                <p>
+                    Jin Store represents a modern approach to e-commerce that prioritizes user experience, 
+                    performance, and conversion optimization. By combining thoughtful UX design with robust 
+                    technical implementation, the platform successfully addresses common pain points in the 
+                    online shopping journey while providing merchants with powerful tools for business growth.
+                </p>
+                <p>
+                    The project demonstrates how a feature-rich e-commerce application can be built using 
+                    React, Node.js, and MongoDB as the primary technology stack. The modular architecture 
+                    ensures the platform can easily scale and adapt to changing business requirements, while 
+                    the performance optimizations provide a competitive edge in today's fast-paced digital 
+                    marketplace.
+                </p>
+                <div class="next-steps">
+                    <a href="index.html#projects" class="btn primary-btn">View More Projects</a>
+                    <a href="index.html#contact" class="btn secondary-btn">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html">Shahorior</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/Shahorior1" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+                <p class="copyright">&copy; 2023 Shahorior. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        // Theme toggle functionality
+        const themeSwitch = document.getElementById('theme-switch');
+        
+        // Check for saved user preference
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.remove('dark-theme');
+            themeSwitch.checked = false;
+        } else {
+            // Default to dark theme if no preference is saved or if dark theme was saved
+            document.body.classList.add('dark-theme');
+            themeSwitch.checked = true;
+            if (!localStorage.getItem('theme')) {
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+        
+        // Handle theme toggle click
+        themeSwitch.addEventListener('change', function() {
+            if (this.checked) {
+                document.body.classList.add('dark-theme');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.body.classList.remove('dark-theme');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
+</body>
+</html> 

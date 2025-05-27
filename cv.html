@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Shahorior's Curriculum Vitae</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/effects.css">
+    <link rel="stylesheet" href="css/resume.css">
+    <link rel="stylesheet" href="css/cv.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body class="loading">
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <svg class="logo-svg" width="100" height="100" viewBox="0 0 100 100">
+                <path d="M30,50 L70,20 L70,80 L30,50 Z" class="logo-path"></path>
+            </svg>
+            <div class="loading-text">
+                <span>L</span>
+                <span>O</span>
+                <span>A</span>
+                <span>D</span>
+                <span>I</span>
+                <span>N</span>
+                <span>G</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Transition -->
+    <div class="page-transition"></div>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch">
+        <label for="theme-switch" class="switch-label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span class="ball"></span>
+        </label>
+    </div>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="index.html">Shahorior</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#skills">Skills</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="#" class="active">CV</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="cv-section">
+        <div class="container">
+            <h2 class="section-title" data-text="Curriculum Vitae" data-aos="fade-up">Curriculum Vitae</h2>
+            
+            <div class="cv-container" data-aos="fade-up" data-aos-delay="200">
+                <div class="cv-header">
+                    <div class="cv-profile">
+                        <div class="cv-profile-image">
+                            <img src="img/profile.jpg" alt="Shahorior">
+                        </div>
+                        <div class="cv-profile-info">
+                            <h1>Sadik Shahorior</h1>
+                            <p class="subtitle">Full Stack Developer</p>
+                            <div class="cv-contact-info">
+                                <div class="cv-contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>sadikshahorioremon@gmail.com</span>
+                                </div>
+                                <div class="cv-contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+8801826304852</span>
+                                </div>
+                                <div class="cv-contact-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Dhaka, Bangladesh</span>
+                                </div>
+                                <div class="cv-contact-item">
+                                    <i class="fab fa-github"></i>
+                                    <a href="https://github.com/Shahorior1" target="_blank">github.com/Shahorior1</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cv-download">
+                        <a href="https://drive.google.com/file/d/1Lbbf4kOP4a5agpL7aZY-1ZxCi6hSJz0V/view?usp=sharing" class="btn primary-btn download-btn" target="_blank">
+                            <i class="fas fa-download"></i>
+                            <span>Download CV</span>
+                        </a>
+                        <p>Last updated: October 2023</p>
+                    </div>
+                </div>
+                
+                <div class="cv-content">
+                    <!-- Professional Summary -->
+                    <div class="cv-section" data-aos="fade-up" data-aos-delay="300">
+                        <h3><i class="fas fa-user"></i> Professional Summary</h3>
+                        <div class="cv-summary">
+                            <p>Full-stack developer with 5+ years of experience designing and building responsive web applications. Proficient in JavaScript, TypeScript, React, Node.js, and MongoDB. Strong background in creating RESTful APIs, implementing responsive designs, and optimizing application performance. Passionate about writing clean, efficient code and staying up-to-date with emerging technologies.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Work Experience -->
+                    <div class="cv-section" data-aos="fade-up" data-aos-delay="400">
+                        <h3><i class="fas fa-briefcase"></i> Work Experience</h3>
+                        
+                        <div class="cv-item">
+                            <div class="cv-item-header">
+                                <h4>Senior Full Stack Developer</h4>
+                                <p class="cv-date">2020 - Present</p>
+                            </div>
+                            <h5>TechSolutions Inc.</h5>
+                            <ul class="achievements-list">
+                                <li><span class="highlight">Increased page-load speed by 40%</span> by implementing lazy loading and code splitting techniques</li>
+                                <li><span class="highlight">Reduced bug count by 25%</span> in sprint cycles through implementation of comprehensive unit testing</li>
+                                <li><span class="highlight">Decreased API response time by 30%</span> by optimizing database queries and implementing caching</li>
+                                <li>Led a team of 5 developers in rebuilding the company's flagship product</li>
+                                <li>Mentored junior developers and conducted code reviews to ensure code quality and best practices</li>
+                                <li>Implemented CI/CD pipelines using GitHub Actions to automate testing and deployment processes</li>
+                            </ul>
+                            <div class="technologies-used">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>TypeScript</span>
+                                <span>MongoDB</span>
+                                <span>AWS</span>
+                                <span>Docker</span>
+                            </div>
+                        </div>
+                        
+                        <div class="cv-item">
+                            <div class="cv-item-header">
+                                <h4>Frontend Developer</h4>
+                                <p class="cv-date">2018 - 2020</p>
+                            </div>
+                            <h5>WebCraft Studios</h5>
+                            <ul class="achievements-list">
+                                <li><span class="highlight">Improved user engagement by 35%</span> through UI/UX redesign of key user flows</li>
+                                <li><span class="highlight">Decreased bounce rate by 20%</span> by optimizing mobile responsiveness</li>
+                                <li>Developed and maintained multiple client websites using React and Next.js</li>
+                                <li>Collaborated with designers to implement responsive designs and animations</li>
+                                <li>Created reusable component libraries to improve development efficiency</li>
+                            </ul>
+                            <div class="technologies-used">
+                                <span>React</span>
+                                <span>Next.js</span>
+                                <span>JavaScript</span>
+                                <span>SCSS</span>
+                                <span>Figma</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Education -->
+                    <div class="cv-section" data-aos="fade-up" data-aos-delay="500">
+                        <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                        
+                        <div class="cv-item">
+                            <div class="cv-item-header">
+                                <h4>Bangla </h4>
+                                <p class="cv-date">2016 - 2018</p>
+                            </div>
+                            <h5>Carmichael College</h5>
+                            <p>B.A in Bangla</p>
+                            <p>GPA: 3.8/4.0</p>
+                            <p><strong>Key Courses:</strong> programming hero web development course </p>
+                            <p><strong>Thesis:</strong> "Improving Web Application Performance through Modern JavaScript Frameworks"</p>
+                        </div>
+                        
+                        <!-- <div class="cv-item">
+                            <div class="cv-item-header">
+                                <h4>Bachelor of Science in Computer Science</h4>
+                                <p class="cv-date">2012 - 2016</p>
+                            </div>
+                            <h5>State University</h5>
+                            <p>Minor in Mathematics</p>
+                            <p>GPA: 3.7/4.0</p>
+                            <p><strong>Key Courses:</strong> Data Structures and Algorithms, Database Systems, Software Engineering, Computer Networks</p>
+                        </div>
+                    </div> -->
+                    
+                    <!-- Personal Projects -->
+                    <div class="cv-section" data-aos="fade-up" data-aos-delay="600">
+                        <h3><i class="fas fa-code-branch"></i> Personal Projects</h3>
+                        
+                        <div class="cv-item">
+                            <div class="cv-item-header">
+                                <h4>E-Commerce Platform (Sapora Bangladesh)</h4>
+                                <p class="cv-date">2022</p>
+                            </div>
+                            <p>An online store featuring product catalogs, shopping cart functionality, payment integration, and an admin dashboard for inventory management.</p>
+                            <p><strong>Key Achievements:</strong></p>
+                            <ul class="achievements-list">
+                                <li>Implemented secure payment processing with Stripe</li>
+                                <li>Created a responsive design that works across all devices</li>
+                                <li>Added real-time inventory tracking and notifications</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="https://saporabd.com/" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                <a href="https://github.com/Shahorior1/saporabd" target="_blank" class="project-link"><i class="fab fa-github"></i> Source Code</a>
+                            </div>
+                            <div class="technologies-used">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                                <span>Stripe API</span>
+                            </div>
+                        </div>
+                        
+                        <div class="cv-item">
+                            <div class="cv-item-header">
+                                <h4>Task Management App</h4>
+                                <p class="cv-date">2021</p>
+                            </div>
+                            <p>A productivity application for managing tasks with team collaboration features, deadline tracking, and progress visualization.</p>
+                            <p><strong>Key Achievements:</strong></p>
+                            <ul class="achievements-list">
+                                <li>Designed an intuitive drag-and-drop interface for task management</li>
+                                <li>Implemented real-time updates using WebSockets</li>
+                                <li>Added email notifications for task assignments and deadlines</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="https://task-management-roan-one.vercel.app/" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                <a href="https://github.com/Shahorior1/task-management" target="_blank" class="project-link"><i class="fab fa-github"></i> Source Code</a>
+                            </div>
+                            <div class="technologies-used">
+                                <span>Vue.js</span>
+                                <span>Express</span>
+                                <span>PostgreSQL</span>
+                                <span>Socket.io</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Publications and Presentations -->
+                    <div class="cv-section" data-aos="fade-up" data-aos-delay="700">
+                        <h3><i class="fas fa-file-alt"></i> Publications & Presentations</h3>
+                        
+                        <div class="cv-item">
+                            <div class="cv-item-header">
+                                <h4>Performance Optimization in Modern Web Applications</h4>
+                                <p class="cv-date">September 2022</p>
+                            </div>
+                            <h5>International Journal of Web Technologies</h5>
+                            <p>Research paper focused on techniques for improving web application performance, including code splitting, lazy loading, and server-side rendering.</p>
+                            <a href="#" class="publication-link">View Publication</a>
+                        </div>
+                        
+                        <div class="cv-item">
+                            <div class="cv-item-header">
+                                <h4>Building Scalable Microservices with Node.js</h4>
+                                <p class="cv-date">May 2021</p>
+                            </div>
+                            <h5>WebTech Conference, Dhaka</h5>
+                            <p>Presented strategies for developing and deploying microservices architecture using Node.js, Docker, and Kubernetes.</p>
+                            <a href="https://drive.google.com/file/d/1Lbbf4kOP4a5agpL7aZY-1ZxCi6hSJz0V/view" class="publication-link" target="_blank">View Slides</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Skills -->
+                    <div class="cv-section" data-aos="fade-up" data-aos-delay="800">
+                        <h3><i class="fas fa-laptop-code"></i> Technical Skills</h3>
+                        
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h4><i class="fas fa-code"></i> Programming Languages</h4>
+                                <ul class="skill-list">
+                                    <li>
+                                        <div class="skill-name-level">
+                                            <div class="skill-name"><i class="fab fa-js"></i> JavaScript/TypeScript</div>
+                                            <span class="skill-level expert">Expert</span>
+                                        </div>
+                                        <div class="progress-container">
+                                            <div class="progress-bar animated"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="skill-name-level">
+                                            <div class="skill-name"><i class="fab fa-html5"></i> HTML5/CSS3</div>
+                                            <span class="skill-level expert">Expert</span>
+                                        </div>
+                                        <div class="progress-container">
+                                            <div class="progress-bar animated"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="skill-name-level">
+                                            <div class="skill-name"><i class="fab fa-python"></i> Python</div>
+                                            <span class="skill-level intermediate">Intermediate</span>
+                                        </div>
+                                        <div class="progress-container">
+                                            <div class="progress-bar animated"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="skill-name-level">
+                                            <div class="skill-name"><i class="fab fa-php"></i> PHP</div>
+                                            <span class="skill-level intermediate">Intermediate</span>
+                                        </div>
+                                        <div class="progress-container">
+                                            <div class="progress-bar animated"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                
+                                <div class="skill-icon-grid">
+                                    <div class="skill-icon">
+                                        <div class="skill-icon-img">
+                                            <i class="fab fa-js"></i>
+                                        </div>
+                                        <div class="skill-icon-name">JavaScript</div>
+                                    </div>
+                                    <div class="skill-icon">
+                                        <div class="skill-icon-img">
+                                            <i class="fab fa-html5"></i>
+                                        </div>
+                                        <div class="skill-icon-name">HTML5</div>
+                                    </div>
+                                    <div class="skill-icon">
+                                        <div class="skill-icon-img">
+                                            <i class="fab fa-css3-alt"></i>
+                                        </div>
+                                        <div class="skill-icon-name">CSS3</div>
+                                    </div>
+                                    <div class="skill-icon">
+                                        <div class="skill-icon-img">
+                                            <i class="fab fa-python"></i>
+                                        </div>
+                                        <div class="skill-icon-name">Python</div>
+                                    </div>
+                                    <div class="skill-icon">
+                                        <div class="skill-icon-img">
+                                            <i class="fab fa-php"></i>
+                                        </div>
+                                        <div class="skill-icon-name">PHP</div>
+                                    </div>
+                                    <div class="skill-icon">
+                                        <div class="skill-icon-img">
+                                            <i class="fab fa-java"></i>
+                                        </div>
+                                        <div class="skill-icon-name">Java</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h4><i class="fas fa-cubes"></i> Frameworks & Libraries</h4>
+                                <ul class="skill-list">
+                                    <li>
+                                        <div class="skill-name-level">
+                                            <div class="skill-name"><i class="fab fa-react"></i> React</div>
+                                            <span class="skill-level expert">Expert</span>
+                                        </div>
+                                        <div class="progress-container">
+                                            <div class="progress-bar animated"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="skill-name-level">
+                                            <div class="skill-name"><i class="fab fa-node-js"></i> Node.js/Express</div>
+                                            <span class="skill-level expert">Expert</span>
+                                        </div>
+                                        <div class="progress-container">
+                                            <div class="progress-bar animated"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="skill-name-level">
+                                            <div class="skill-name"><i class="fab fa-vuejs"></i> Vue.js</div>
+                                            <span class="skill-level intermediate">Intermediate</span>
+                                        </div>
+                                        <div class="progress-container">
+                                            <div class="progress-bar animated"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="skill-name-level">
+                                            <div class="skill-name"><i class="fas fa-bolt"></i> Next.js</div>
+                                            <span class="skill-level advanced">Advanced</span>
+                                        </div>
+                                        <div class="progress-container">
+                                            <div class="progress-bar animated"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="skill-name-level">
+                                            <div class="skill-name"><i class="fab fa-css3"></i> Tailwind CSS</div>
+                                            <span class="skill-level advanced">Advanced</span>
+                                        </div>
+                                        <div class="progress-container">
+                                            <div class="progress-bar animated"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h4><i class="fas fa-database"></i> Databases</h4>
+                                <ul class="skill-list">
+                                    <li>
+                                        <div class="skill-name-level">
+                                            <div class="skill-name"><i class="fas fa-leaf"></i> MongoDB</div>
+                                            <span class="skill-level expert">Expert</span>
+                                        </div>
+                                        <div class="progress-container">
+                                            <div class="progress-bar animated"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="skill-name-level">
+                                            <div class="skill-name"><i class="fas fa-database"></i> MySQL</div>
+                                            <span class="skill-level advanced">Advanced</span>
+                                        </div>
+                                        <div class="progress-container">
+                                            <div class="progress-bar animated"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="skill-name-level">
+                                            <div class="skill-name"><i class="fas fa-elephant"></i> PostgreSQL</div>
+                                            <span class="skill-level intermediate">Intermediate</span>
+                                        </div>
+                                        <div class="progress-container">
+                                            <div class="progress-bar animated"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="skill-name-level">
+                                            <div class="skill-name"><i class="fas fa-fire"></i> Firebase</div>
+                                            <span class="skill-level advanced">Advanced</span>
+                                        </div>
+                                        <div class="progress-container">
+                                            <div class="progress-bar animated"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h4><i class="fas fa-tools"></i> DevOps & Tools</h4>
+                                <ul class="skill-list">
+                                    <li>
+                                        <div class="skill-name-level">
+                                            <div class="skill-name"><i class="fab fa-git-alt"></i> Git/GitHub</div>
+                                            <span class="skill-level expert">Expert</span>
+                                        </div>
+                                        <div class="progress-container">
+                                            <div class="progress-bar animated"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="skill-name-level">
+                                            <div class="skill-name"><i class="fab fa-docker"></i> Docker</div>
+                                            <span class="skill-level intermediate">Intermediate</span>
+                                        </div>
+                                        <div class="progress-container">
+                                            <div class="progress-bar animated"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="skill-name-level">
+                                            <div class="skill-name"><i class="fab fa-aws"></i> AWS</div>
+                                            <span class="skill-level intermediate">Intermediate</span>
+                                        </div>
+                                        <div class="progress-container">
+                                            <div class="progress-bar animated"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="skill-name-level">
+                                            <div class="skill-name"><i class="fas fa-sync-alt"></i> CI/CD</div>
+                                            <span class="skill-level advanced">Advanced</span>
+                                        </div>
+                                        <div class="progress-container">
+                                            <div class="progress-bar animated"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="skill-name-level">
+                                            <div class="skill-name"><i class="fas fa-vial"></i> Jest/Testing</div>
+                                            <span class="skill-level advanced">Advanced</span>
+                                        </div>
+                                        <div class="progress-container">
+                                            <div class="progress-bar animated"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Soft Skills and Languages -->
+                    <div class="cv-section" data-aos="fade-up" data-aos-delay="900">
+                        <div class="cv-two-columns">
+                            <div class="cv-column">
+                                <h3><i class="fas fa-comment"></i> Soft Skills</h3>
+                                <ul class="soft-skills-list">
+                                    <li><i class="fas fa-check-circle"></i> Team Leadership</li>
+                                    <li><i class="fas fa-check-circle"></i> Problem Solving</li>
+                                    <li><i class="fas fa-check-circle"></i> Project Management</li>
+                                    <li><i class="fas fa-check-circle"></i> Communication</li>
+                                    <li><i class="fas fa-check-circle"></i> Mentoring</li>
+                                    <li><i class="fas fa-check-circle"></i> Agile Methodologies</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="cv-column">
+                                <h3><i class="fas fa-language"></i> Languages</h3>
+                                <ul class="languages-list">
+                                    <li>
+                                        <span class="language-name">Bengali (Native)</span>
+                                        <div class="language-level">
+                                            <span class="level-dot filled"></span>
+                                            <span class="level-dot filled"></span>
+                                            <span class="level-dot filled"></span>
+                                            <span class="level-dot filled"></span>
+                                            <span class="level-dot filled"></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="language-name">English</span>
+                                        <div class="language-level">
+                                            <span class="level-dot filled"></span>
+                                            <span class="level-dot filled"></span>
+                                            <span class="level-dot filled"></span>
+                                            <span class="level-dot filled"></span>
+                                            <span class="level-dot"></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="language-name">Hindi</span>
+                                        <div class="language-level">
+                                            <span class="level-dot filled"></span>
+                                            <span class="level-dot filled"></span>
+                                            <span class="level-dot filled"></span>
+                                            <span class="level-dot"></span>
+                                            <span class="level-dot"></span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Certifications -->
+                    <div class="cv-section" data-aos="fade-up" data-aos-delay="1000">
+                        <h3><i class="fas fa-certificate"></i> Certifications</h3>
+                        
+                        <div class="certifications-grid">
+                            <div class="certification-item">
+                                <img src="img/Screenshot 2025-05-15 165725.png" alt="AWS Certification">
+                                <h4>AWS Certified Developer</h4>
+                                <p>Amazon Web Services</p>
+                                <p class="cert-date">August 2021</p>
+                                <a href="#" class="cert-link">View Certificate</a>
+                            </div>
+                            
+                            <div class="certification-item">
+                                <img src="img/Screenshot 2025-05-15 165810.png" alt="Google Cloud Certification">
+                                <h4>Google Cloud Certified</h4>
+                                <p>Google Cloud Platform</p>
+                                <p class="cert-date">March 2022</p>
+                                <a href="#" class="cert-link">View Certificate</a>
+                            </div>
+                            
+                            <div class="certification-item">
+                                <img src="img/React-Advanced-Developer.png" alt="React Certification">
+                                <h4>React Advanced Developer</h4>
+                                <p>React Training</p>
+                                <p class="cert-date">January 2020</p>
+                                <a href="#" class="cert-link">View Certificate</a>
+                            </div>
+                            
+                            <div class="certification-item">
+                                <img src="img/JavaScript-Developer.png" alt="JavaScript Certification">
+                                <h4>JavaScript Developer</h4>
+                                <p>Advanced JavaScript Training</p>
+                                <p class="cert-date">October 2023</p>
+                                <a href="https://drive.google.com/file/d/1Lbbf4kOP4a5agpL7aZY-1ZxCi6hSJz0V/view" class="cert-link" target="_blank">View Certificate</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog Highlights -->
+                    <div class="cv-section" data-aos="fade-up" data-aos-delay="1050">
+                        <h3><i class="fas fa-feather-alt"></i> Blog Highlights</h3>
+                        
+                        <div class="blog-highlights-grid">
+                            <div class="blog-item">
+                                <div class="blog-item-image">
+                                    <img src="img/blog-1.jpg" alt="Modern JavaScript">
+                                    <div class="blog-category">JavaScript</div>
+                                </div>
+                                <div class="blog-item-content">
+                                    <div class="blog-date">October 15, 2023</div>
+                                    <h4>Modern JavaScript Features Every Developer Should Know</h4>
+                                    <p>An exploration of the latest JavaScript features that can improve your code quality and productivity.</p>
+                                    <a href="blog.html#post1" class="blog-read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            
+                            <div class="blog-item">
+                                <div class="blog-item-image">
+                                    <img src="img/blog-2.jpg" alt="React Performance">
+                                    <div class="blog-category">React</div>
+                                </div>
+                                <div class="blog-item-content">
+                                    <div class="blog-date">September 28, 2023</div>
+                                    <h4>Optimizing React Performance: A Deep Dive</h4>
+                                    <p>Techniques and best practices for improving the performance of your React applications.</p>
+                                    <a href="blog.html#post2" class="blog-read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            
+                            <div class="blog-item">
+                                <div class="blog-item-image">
+                                    <img src="img/blog-3.jpg" alt="CSS Grid">
+                                    <div class="blog-category">CSS</div>
+                                </div>
+                                <div class="blog-item-content">
+                                    <div class="blog-date">August 12, 2023</div>
+                                    <h4>Mastering CSS Grid: Advanced Layout Techniques</h4>
+                                    <p>How to use CSS Grid to create complex, responsive layouts with minimal code.</p>
+                                    <a href="blog.html#post3" class="blog-read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="view-all-blogs">
+                            <a href="blog.html" class="btn secondary-btn">View All Blog Posts <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- References -->
+                    <div class="cv-section" data-aos="fade-up" data-aos-delay="1100">
+                        <h3><i class="fas fa-user-friends"></i> References</h3>
+                        <p class="references-note">Professional references available upon request.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright">&copy; 2023 Shahorior. All Rights Reserved.</p>
+                <div class="back-to-top">
+                    <a href="#top"><i class="fas fa-chevron-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true,
+            offset: 100
+        });
+
+        // Animate skill progress bars when they come into view
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fix for Font Awesome elephant icon (which doesn't exist)
+            const postgresIconElement = document.querySelector('.skill-name i.fas.fa-elephant');
+            if (postgresIconElement) {
+                postgresIconElement.classList.remove('fas', 'fa-elephant');
+                postgresIconElement.classList.add('fas', 'fa-database');
+            }
+
+            // Initialize Intersection Observer for progress bars
+            const progressBars = document.querySelectorAll('.progress-bar');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Get the skill level
+                        const skillItem = entry.target.closest('li');
+                        const skillLevel = skillItem.querySelector('.skill-level');
+                        
+                        if (skillLevel) {
+                            // Add the corresponding class based on skill level
+                            if (skillLevel.classList.contains('beginner')) {
+                                entry.target.style.width = '25%';
+                            } else if (skillLevel.classList.contains('intermediate')) {
+                                entry.target.style.width = '50%';
+                            } else if (skillLevel.classList.contains('advanced')) {
+                                entry.target.style.width = '75%';
+                            } else if (skillLevel.classList.contains('expert')) {
+                                entry.target.style.width = '95%';
+                            }
+                            
+                            // Add animation class
+                            entry.target.classList.add('animated');
+                            
+                            // Unobserve after animation
+                            observer.unobserve(entry.target);
+                        }
+                    }
+                });
+            }, {
+                threshold: 0.2
+            });
+            
+            // Observe all progress bars
+            progressBars.forEach(bar => {
+                observer.observe(bar);
+            });
+
+            // Add hover effect for skill items
+            const skillItems = document.querySelectorAll('.skill-list li');
+            skillItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.querySelector('.progress-bar').style.boxShadow = '0 0 10px var(--primary-color)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.querySelector('.progress-bar').style.boxShadow = 'none';
+                });
+            });
+
+            // Add click effect for skill icons
+            const skillIcons = document.querySelectorAll('.skill-icon');
+            skillIcons.forEach(icon => {
+                icon.addEventListener('click', function() {
+                    this.classList.add('clicked');
+                    setTimeout(() => {
+                        this.classList.remove('clicked');
+                    }, 300);
+                });
+            });
+        });
+
+        // Theme toggle functionality
+        const themeSwitch = document.getElementById('theme-switch');
+        
+        // Check for saved user preference
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.remove('dark-theme');
+            themeSwitch.checked = false;
+        } else {
+            // Default to dark theme if no preference is saved or if dark theme was saved
+            document.body.classList.add('dark-theme');
+            themeSwitch.checked = true;
+            if (!localStorage.getItem('theme')) {
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+        
+        // Handle theme toggle click
+        themeSwitch.addEventListener('change', function() {
+            if (this.checked) {
+                document.body.classList.add('dark-theme');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.body.classList.remove('dark-theme');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
+    <script src="js/script.js"></script>
+    <script src="js/loader.js"></script>
+</body>
+</html> 
